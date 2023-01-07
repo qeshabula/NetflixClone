@@ -12,6 +12,12 @@
 		AF43E6882968030D006D6C81 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF43E6872968030D006D6C81 /* MainTabBarViewController.swift */; };
 		AF43E68D2968030E006D6C81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF43E68C2968030E006D6C81 /* Assets.xcassets */; };
 		AF43E6902968030E006D6C81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF43E68E2968030E006D6C81 /* LaunchScreen.storyboard */; };
+		AF43E699296847F5006D6C81 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF43E698296847F5006D6C81 /* HomeViewController.swift */; };
+		AF43E69B29684830006D6C81 /* UpcomingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF43E69A29684830006D6C81 /* UpcomingViewController.swift */; };
+		AF43E69D2968485F006D6C81 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF43E69C2968485F006D6C81 /* SearchViewController.swift */; };
+		AF43E69F296848AE006D6C81 /* DownloadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF43E69E296848AE006D6C81 /* DownloadsViewController.swift */; };
+		AF43E6A6296853B4006D6C81 /* CollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF43E6A5296853B4006D6C81 /* CollectionViewTableViewCell.swift */; };
+		AF43E6A829690099006D6C81 /* HeroHeaderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF43E6A729690099006D6C81 /* HeroHeaderUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +28,12 @@
 		AF43E68C2968030E006D6C81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF43E68F2968030E006D6C81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF43E6912968030E006D6C81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF43E698296847F5006D6C81 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		AF43E69A29684830006D6C81 /* UpcomingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewController.swift; sourceTree = "<group>"; };
+		AF43E69C2968485F006D6C81 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		AF43E69E296848AE006D6C81 /* DownloadsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsViewController.swift; sourceTree = "<group>"; };
+		AF43E6A5296853B4006D6C81 /* CollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTableViewCell.swift; sourceTree = "<group>"; };
+		AF43E6A729690099006D6C81 /* HeroHeaderUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroHeaderUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,12 @@
 		AF43E6822968030D006D6C81 /* NetflixClone */ = {
 			isa = PBXGroup;
 			children = (
+				AF43E6A42968536A006D6C81 /* Managers */,
+				AF43E6A329685353006D6C81 /* Resources */,
+				AF43E6A229685312006D6C81 /* Models */,
+				AF43E6A0296852EE006D6C81 /* Views */,
+				AF43E6A1296852FB006D6C81 /* ViewModels */,
+				AF43E697296847D5006D6C81 /* Controllers */,
 				AF43E6832968030D006D6C81 /* AppDelegate.swift */,
 				AF43E6852968030D006D6C81 /* SceneDelegate.swift */,
 				AF43E6872968030D006D6C81 /* MainTabBarViewController.swift */,
@@ -62,6 +80,54 @@
 				AF43E6912968030E006D6C81 /* Info.plist */,
 			);
 			path = NetflixClone;
+			sourceTree = "<group>";
+		};
+		AF43E697296847D5006D6C81 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AF43E698296847F5006D6C81 /* HomeViewController.swift */,
+				AF43E69A29684830006D6C81 /* UpcomingViewController.swift */,
+				AF43E69C2968485F006D6C81 /* SearchViewController.swift */,
+				AF43E69E296848AE006D6C81 /* DownloadsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		AF43E6A0296852EE006D6C81 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AF43E6A5296853B4006D6C81 /* CollectionViewTableViewCell.swift */,
+				AF43E6A729690099006D6C81 /* HeroHeaderUIView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AF43E6A1296852FB006D6C81 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		AF43E6A229685312006D6C81 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AF43E6A329685353006D6C81 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AF43E6A42968536A006D6C81 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,9 +200,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF43E69D2968485F006D6C81 /* SearchViewController.swift in Sources */,
 				AF43E6882968030D006D6C81 /* MainTabBarViewController.swift in Sources */,
+				AF43E6A6296853B4006D6C81 /* CollectionViewTableViewCell.swift in Sources */,
+				AF43E6A829690099006D6C81 /* HeroHeaderUIView.swift in Sources */,
+				AF43E69F296848AE006D6C81 /* DownloadsViewController.swift in Sources */,
 				AF43E6842968030D006D6C81 /* AppDelegate.swift in Sources */,
 				AF43E6862968030D006D6C81 /* SceneDelegate.swift in Sources */,
+				AF43E69B29684830006D6C81 /* UpcomingViewController.swift in Sources */,
+				AF43E699296847F5006D6C81 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
