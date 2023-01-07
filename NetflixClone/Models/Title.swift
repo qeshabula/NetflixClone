@@ -1,5 +1,5 @@
 //
-//  Tv.swift
+//  Movie.swift
 //  NetflixClone
 //
 //  Created by Bula on 1/7/23.
@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct TredingTvResponse: Codable {
-    let results: [Tv]
+struct TredingTitleResponse: Codable {
+    let results: [Title]
 }
 
-struct Tv: Codable {
+struct Title: Codable {
     let id: Int
     let media_type: String?
     let original_language: String?
