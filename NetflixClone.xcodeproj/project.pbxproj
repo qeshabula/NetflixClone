@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF0FA450296D815A00405BD7 /* PersistanceDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0FA44F296D815A00405BD7 /* PersistanceDataManager.swift */; };
 		AF43E6842968030D006D6C81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF43E6832968030D006D6C81 /* AppDelegate.swift */; };
 		AF43E6862968030D006D6C81 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF43E6852968030D006D6C81 /* SceneDelegate.swift */; };
 		AF43E6882968030D006D6C81 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF43E6872968030D006D6C81 /* MainTabBarViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF0FA44F296D815A00405BD7 /* PersistanceDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceDataManager.swift; sourceTree = "<group>"; };
 		AF43E6802968030D006D6C81 /* NetflixClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetflixClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF43E6832968030D006D6C81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF43E6852968030D006D6C81 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 			children = (
 				AF43E6A92969806D006D6C81 /* APICaller.swift */,
 				AF882F82296C72DE007EA6B7 /* DataPersistenceManager.swift */,
+				AF0FA44F296D815A00405BD7 /* PersistanceDataManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				AF43E69B29684830006D6C81 /* UpcomingViewController.swift in Sources */,
 				AF43E6C5296BF133006D6C81 /* TitlePreviewViewController.swift in Sources */,
 				AF43E6AC296985EC006D6C81 /* Title.swift in Sources */,
+				AF0FA450296D815A00405BD7 /* PersistanceDataManager.swift in Sources */,
 				AF43E699296847F5006D6C81 /* HomeViewController.swift in Sources */,
 				AF43E6BD296A950F006D6C81 /* TitleViewModel.swift in Sources */,
 			);

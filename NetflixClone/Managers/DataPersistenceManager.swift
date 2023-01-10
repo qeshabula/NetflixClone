@@ -51,7 +51,8 @@ class DataPersistenceManager {
         }
     }
     
-    func fetchingTitlesFromDataBase(completion: @escaping(Result<[TitleItem], Error>) -> Void) {
+    
+    func fetchingTitlesFromDataBase(completion: @escaping (Result<[TitleItem], Error>) -> Void) {
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
@@ -65,7 +66,7 @@ class DataPersistenceManager {
         
         do {
             
-          let titles = try context.fetch(request)
+            let titles = try context.fetch(request)
             completion(.success(titles))
             
         } catch {
@@ -73,13 +74,14 @@ class DataPersistenceManager {
         }
     }
     
-    func deleteTitleWith(model: TitleItem, completion: @escaping (Result<Void, Error>) -> Void) {
+    func deleteTitleWith(model: TitleItem, completion: @escaping (Result<Void, Error>)-> Void) {
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
         }
         
         let context = appDelegate.persistentContainer.viewContext
+        
         
         context.delete(model)
         
@@ -89,5 +91,6 @@ class DataPersistenceManager {
         } catch {
             completion(.failure(DatabasError.failedToDeleteData))
         }
+        
     }
 }

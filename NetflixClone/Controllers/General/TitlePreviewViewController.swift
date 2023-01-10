@@ -10,8 +10,6 @@ import WebKit
 
 class TitlePreviewViewController: UIViewController {
     
-    
-    
     private let titleLabel: UILabel = {
        
         let label = UILabel()
@@ -62,8 +60,6 @@ class TitlePreviewViewController: UIViewController {
         
         
     }
-    
-
     
     func configureConstraints() {
         let webViewConstraints = [

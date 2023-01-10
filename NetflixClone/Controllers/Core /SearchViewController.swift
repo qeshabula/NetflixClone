@@ -8,18 +8,17 @@
 import UIKit
 
 class SearchViewController: UIViewController {
+
     
     private var titles: [Title] = [Title]()
 
     private let discoverTable: UITableView = {
-        
         let table = UITableView()
         table.register(TitleTableViewCell.self, forCellReuseIdentifier: TitleTableViewCell.identifier)
         return table
     }()
-
+    
     private let searchController: UISearchController = {
-        
         let controller = UISearchController(searchResultsController: SearchResultsViewController())
         controller.searchBar.placeholder = "Search for a Movie or a Tv show"
         controller.searchBar.searchBarStyle = .minimal
@@ -28,17 +27,15 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         title = "Search"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationItem.largeTitleDisplayMode = .always
-
+        
         view.backgroundColor = .systemBackground
         
         view.addSubview(discoverTable)
         discoverTable.delegate = self
         discoverTable.dataSource = self
-        
         navigationItem.searchController = searchController
         
         navigationController?.navigationBar.tintColor = .white
@@ -47,8 +44,9 @@ class SearchViewController: UIViewController {
         searchController.searchResultsUpdater = self
     }
     
+    
     private func fetchDiscoverMovies() {
-        APICaller.shared.getDiscoverMovies { [ weak self ] result in
+        APICaller.shared.getDiscoverMovies { [weak self] result in
             switch result {
             case .success(let titles):
                 self?.titles = titles
@@ -61,17 +59,20 @@ class SearchViewController: UIViewController {
         }
     }
 
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         discoverTable.frame = view.bounds
     }
+ 
     
+
 }
 
 
-extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
+extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return titles.count
+        return titles.count;
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -80,16 +81,17 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         
+        
         let title = titles[indexPath.row]
         let model = TitleViewModel(titleName: title.original_language ?? title.original_title ?? "Unknown name", posterURL: title.poster_path ?? "")
         cell.configure(with: model)
         
-        return cell
+        return cell;
     }
+    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 140
-        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -101,6 +103,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
             return
         }
         
+        
         APICaller.shared.getMovie(with: titleName) { [weak self] result in
             switch result {
             case .success(let videoElement):
@@ -109,17 +112,17 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
                     vc.configure(with: TitlePreviewViewModel(title: titleName, youtubeView: videoElement, titleOverview: title.overview ?? ""))
                     self?.navigationController?.pushViewController(vc, animated: true)
                 }
+
                 
             case .failure(let error):
                 print(error.localizedDescription)
-                
             }
         }
-    } 
+    }
 }
 
-
 extension SearchViewController: UISearchResultsUpdating, SearchResultsViewControllerDelegate {
+    
     func updateSearchResults(for searchController: UISearchController) {
         let searchBar = searchController.searchBar
         
@@ -127,9 +130,8 @@ extension SearchViewController: UISearchResultsUpdating, SearchResultsViewContro
               !query.trimmingCharacters(in: .whitespaces).isEmpty,
               query.trimmingCharacters(in: .whitespaces).count >= 3,
               let resultsController = searchController.searchResultsController as? SearchResultsViewController else {
-            return
-        }
-        
+                  return
+              }
         resultsController.delegate = self
         
         APICaller.shared.search(with: query) { result in
@@ -138,13 +140,14 @@ extension SearchViewController: UISearchResultsUpdating, SearchResultsViewContro
                 case .success(let titles):
                     resultsController.titles = titles
                     resultsController.searchResultsCollectionView.reloadData()
-                    
                 case .failure(let error):
                     print(error.localizedDescription)
                 }
             }
         }
     }
+    
+    
     
     func searchResultsViewControllerDidTapItem(_ viewModel: TitlePreviewViewModel) {
         
@@ -154,4 +157,5 @@ extension SearchViewController: UISearchResultsUpdating, SearchResultsViewContro
             self?.navigationController?.pushViewController(vc, animated: true)
         }
     }
+    
 }
